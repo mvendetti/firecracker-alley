@@ -1,0 +1,7 @@
+*.log
+wp-config.php
+wp-content/plugins/
+
+/.htaccess
+/license.txt
+/readme.html
