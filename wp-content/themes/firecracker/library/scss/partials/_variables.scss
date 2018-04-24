@@ -1,6 +1,6 @@
 /******************************************************************
-Site Name:
-Author:
+Site Name: Firecracker Alley
+Author: Mike Vendetti
 
 Stylesheet: Variables
 
@@ -11,41 +11,33 @@ No one likes a mess.
 
 ******************************************************************/
 
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
+/* main color scheme */
+$off-white:        #F0EADE;
+$tan:              #DDCCB0;
+$light-red:        #DE5454;
+$dark-red:         #8A2829;
+$dark-blue:        #22304D;
+$light-blue:       #6589A1;
+/* end main */
 
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
-
+$white:             #ffffff;
 $black:             #323944;
-$white:             #fff;
-
-$light-gray:        #f8f9fa;
-$gray:              #eaedf2;
-$text-color:        #5c6b80;
-$meta-gray:         #9fa6b4;
-
-$tan:               #eceee5;
-
 $green:             #7dd667;
-
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
-$link-color:        $bones-pink;
-$link-hover:        darken($link-color, 9%);
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+
+$alert-yellow:      #ebe16f;
+$alert-red:         $dark-red;
+$alert-green:       $green;
+$alert-blue:        $blue;
+
+$link-color:        $light-red;
+$link-hover:        $dark-red;
 
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
-
-
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
+$text-color:        #5c6b80;
+$meta-gray:         #9fa6b4;
