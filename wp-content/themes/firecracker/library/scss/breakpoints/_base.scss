@@ -25,6 +25,14 @@ body {
   	-moz-osx-font-smoothing: grayscale;
 }
 
+/* just some logo stuff here no big deal */
+
+img {
+    &.logo {
+        height: 150px;
+    }
+}
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
