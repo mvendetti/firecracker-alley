@@ -1,0 +1,23 @@
+img {
+    &.logo {
+        height: 175px;
+        margin-top: 2em;
+    }
+}
+
+.nav {
+    li {
+        &.menu-item {
+            a {
+                color: $off-white;
+                font-size: 1.2em;
+                font-weight: 600;
+                text-transform: uppercase;
+                &:hover {
+                    text-decoration: none;
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+}
