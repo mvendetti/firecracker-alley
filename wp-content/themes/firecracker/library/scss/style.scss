@@ -1,8 +1,8 @@
 /*! Made with Bones: http://themble.com/bones :) */
 
 /******************************************************************
-Site Name:
-Author:
+Site Name: Firecracker Alley
+Author: Mike Vendetti
 
 Stylesheet: Main Stylesheet
 
@@ -57,6 +57,15 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // forms (inputs & labels)
 @import "modules/forms";
+
+// doing what I want since the world is my oyster
+@import "modules/header";
+
+// still doing what I want...
+@import "modules/main";
+
+// yup. I'm sure you can figure out what most of these are for
+@import "modules/cards";
 
 /*********************
 BASE (MOBILE) SIZE
