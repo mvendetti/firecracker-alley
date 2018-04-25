@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Stands</h1>
-            <?php $catquery = new WP_Query( 'cat=6' ); ?>
+            <?php $catquery = new WP_Query( array( 'category_name' => 'stand', 'posts_per_page'=>-1 ) ); ?>
             <div class="row">
                 <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
