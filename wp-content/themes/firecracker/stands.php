@@ -4,22 +4,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1>Stands</h1>
             <?php $catquery = new WP_Query( 'cat=6' ); ?>
             <div class="row">
                 <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
 
-                        <div class="col-md-3">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                             <div class="card">
-                                <a href="<?php the_permalink(); ?>" class="card-img-top" alt="Card image">
-                                    <?php
+                                <a href="<?php the_permalink(); ?>">
+                                    <img class="card-img-top img-fluid" alt="Card image" src="<?php
                                         if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail( array(157,157) );
+                                            the_post_thumbnail_url("medium");
                                         } else {
                                             'null';
-                                        }
-                                    ?>
+                                        }?>">
+
                                 </a>
 
                                 <div class="card-body">
@@ -33,9 +33,6 @@
                         </div>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
-        </div>
-        <div class="col-md-4">
-            <!-- sidebar crap or a map or something -->
         </div>
     </div>
 </div>
