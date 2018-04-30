@@ -1472,6 +1472,15 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   margin-bottom: 2em;
 }
+/* line 3, ../scss/modules/_cards.scss */
+.card .card-body {
+  padding-top: 0.5em;
+  padding-bottom: 0;
+}
+/* line 6, ../scss/modules/_cards.scss */
+.card .card-body small {
+  font-weight: bold;
+}
 
 /*********************
 BASE (MOBILE) SIZE

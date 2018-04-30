@@ -23,6 +23,9 @@
                                 </a>
 
                                 <div class="card-body">
+                                    <small>
+                                        <?php echo get_the_title(); ?>
+                                    </small>
                                     <h5 class="card-title">
                                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                                             Stand # <?php echo get_field( "stand_number", $catquery->ID ); ?>

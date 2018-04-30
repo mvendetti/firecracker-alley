@@ -1,3 +1,10 @@
 .card {
     margin-bottom: 2em;
+    .card-body {
+        padding-top: 0.5em;
+        padding-bottom: 0;
+        small {
+            font-weight: bold;
+        }
+    }
 }
