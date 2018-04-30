@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <h1>Stands</h1>
             <?php
-                $stand_posts_array = array(
+                $args = array(
                     'category_name' => 'stand',
                     'meta_key' => 'stand_number',
                     'meta_type' => 'NUMERIC',
@@ -15,7 +15,7 @@
                     'order' => 'ASC',
                     'posts_per_page' => -1
                 );
-                $stand_query = new WP_Query( $stand_posts_array );
+                $stand_query = new WP_Query( $args );
             ?>
             <div class="row">
                 <?php while($stand_query->have_posts()) : $stand_query->the_post(); ?>
@@ -42,7 +42,7 @@
                                     </small>
                                     <h5 class="card-title">
                                         <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                            Stand # <?php echo get_field( "stand_number", $stand_query->ID ); ?>
+                                            Stand # <?php echo get_field( 'stand_number', $stand_query->ID ); ?>
                                         </a>
                                     </h5>
                                 </div>
