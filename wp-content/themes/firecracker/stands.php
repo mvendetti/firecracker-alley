@@ -6,20 +6,34 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Stands</h1>
-            <?php $catquery = new WP_Query( array( 'category_name' => 'stand', 'meta_key' => 'stand_number', 'meta_type' => 'NUMERIC', 'orderby' => 'stand_number', 'order' => 'ASC', 'posts_per_page' => -1 ) ); ?>
+            <?php
+                $stand_posts_array = array(
+                    'category_name' => 'stand',
+                    'meta_key' => 'stand_number',
+                    'meta_type' => 'NUMERIC',
+                    'orderby' => 'stand_number',
+                    'order' => 'ASC',
+                    'posts_per_page' => -1
+                );
+                $stand_query = new WP_Query( $stand_posts_array );
+            ?>
             <div class="row">
-                <?php while($catquery->have_posts()) : $catquery->the_post(); ?>
+                <?php while($stand_query->have_posts()) : $stand_query->the_post(); ?>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                             <div class="card">
                                 <a href="<?php the_permalink(); ?>">
-                                    <img class="card-img-top img-fluid" alt="Stand image" src="<?php
-                                        if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail_url('medium');
-                                        } else {
-                                            echo '/wp-content/themes/firecracker/library/images/default.jpg';
-                                        }?>">
-
+                                    <img
+                                        class="card-img-top img-fluid"
+                                        src="<?php
+                                                if ( has_post_thumbnail() ) {
+                                                    the_post_thumbnail_url('medium');
+                                                } else {
+                                                    echo '/wp-content/themes/firecracker/library/images/default.jpg';
+                                                }
+                                            ?>"
+                                        alt="Stand image"
+                                    > <!-- end img element -->
                                 </a>
 
                                 <div class="card-body">
@@ -28,7 +42,7 @@
                                     </small>
                                     <h5 class="card-title">
                                         <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                            Stand # <?php echo get_field( "stand_number", $catquery->ID ); ?>
+                                            Stand # <?php echo get_field( "stand_number", $stand_query->ID ); ?>
                                         </a>
                                     </h5>
                                 </div>
