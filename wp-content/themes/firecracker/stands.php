@@ -13,11 +13,11 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                             <div class="card">
                                 <a href="<?php the_permalink(); ?>">
-                                    <img class="card-img-top img-fluid" alt="Card image" src="<?php
+                                    <img class="card-img-top img-fluid" alt="Stand image" src="<?php
                                         if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail_url("medium");
+                                            the_post_thumbnail_url('medium');
                                         } else {
-                                            'null';
+                                            echo '/wp-content/themes/firecracker/library/images/default.jpg';
                                         }?>">
 
                                 </a>
