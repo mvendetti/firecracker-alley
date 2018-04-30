@@ -17,7 +17,22 @@
                 );
                 $stand_query = new WP_Query( $args );
             ?>
+
+            <form class="form-inline form-site">
+                <div class="form-group">
+                    <input id="all" name="radio" class="form-control" type="radio" value="all" checked />
+                    <label for="all">All Stands</label>
+
+                    <input id="onsite" name="radio" class="form-control" type="radio" value="onsite" />
+                    <label for="onsite">Onsite</label>
+
+                    <input id="offsite" name="radio" class="form-control" type="radio" value="offsite" />
+                    <label for="offsite">Offsite</label>
+                </div>
+            </form>
+
             <div class="row">
+
                 <?php while($stand_query->have_posts()) : $stand_query->the_post(); ?>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">

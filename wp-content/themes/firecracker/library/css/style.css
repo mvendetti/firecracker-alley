@@ -1445,6 +1445,27 @@ select {
   background-position: 97.5% center;
 }
 
+/* line 129, ../scss/modules/_forms.scss */
+.form-site {
+  margin-bottom: 2em;
+}
+/* line 131, ../scss/modules/_forms.scss */
+.form-site input {
+  visibility: hidden;
+}
+/* line 133, ../scss/modules/_forms.scss */
+.form-site input:checked + label {
+  background-color: #22304D;
+}
+/* line 137, ../scss/modules/_forms.scss */
+.form-site label {
+  cursor: pointer;
+  padding: 2px 10px 2px 10px;
+  color: #F0EADE;
+  background-color: #6589A1;
+  border-radius: 15px;
+}
+
 /* line 2, ../scss/modules/_header.scss */
 img.logo {
   height: 175px;

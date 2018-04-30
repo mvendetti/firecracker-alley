@@ -59,7 +59,7 @@ textarea,
   &:focus,
   &:active {
     background-color: lighten($gray, 4%);
-    outline: none; 
+    outline: none;
   } // end hover or focus
 
   // error notification
@@ -125,4 +125,20 @@ select {
   background-position: 97.5% center;
 }
 
-
+// specific to form on Stands page
+.form-site {
+    margin-bottom: 2em;
+    input {
+        visibility: hidden;
+        &:checked + label {
+            background-color: $dark-blue;
+        }
+    }
+    label {
+        cursor: pointer;
+        padding: 2px 10px 2px 10px;
+        color: $off-white;
+        background-color: $light-blue;
+        border-radius: 15px;
+    }
+}
