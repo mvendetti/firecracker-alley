@@ -7,13 +7,15 @@
         <div class="col-md-12">
             <h1>Stands</h1>
             <?php
+                $paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1;
                 $args = array(
-                    'category_name' => 'stand',
-                    'meta_key' => 'stand_number',
-                    'meta_type' => 'NUMERIC',
-                    'orderby' => 'stand_number',
-                    'order' => 'ASC',
-                    'posts_per_page' => -1
+                    'order'          => 'ASC',
+                    'paged'          => $paged,
+                    'orderby'        => 'stand_number',
+                    'meta_key'       => 'stand_number',
+                    'meta_type'      => 'NUMERIC',
+                    'category_name'  => 'stand',
+                    'posts_per_page' => 12
                 );
                 $stand_query = new WP_Query( $args );
             ?>
@@ -36,42 +38,63 @@
             -->
 
             <div class="row">
-
                 <?php while( $stand_query->have_posts() ) : $stand_query->the_post(); ?>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                    <div class="card">
+                        <a href="<?php the_permalink(); ?>">
+                            <img
+                                class="card-img-top img-fluid"
+                                src="<?php
+                                        if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail_url( 'medium' );
+                                        } else {
+                                            echo '/wp-content/themes/firecracker/library/images/default.jpg';
+                                        }
+                                    ?>"
+                                alt="Stand image"
+                            > <!-- end img element -->
+                        </a>
 
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                            <div class="card">
-                                <a href="<?php the_permalink(); ?>">
-                                    <img
-                                        class="card-img-top img-fluid"
-                                        src="<?php
-                                                if ( has_post_thumbnail() ) {
-                                                    the_post_thumbnail_url('medium');
-                                                } else {
-                                                    echo '/wp-content/themes/firecracker/library/images/default.jpg';
-                                                }
-                                            ?>"
-                                        alt="Stand image"
-                                    > <!-- end img element -->
-                                </a>
-
-                                <div class="card-body">
-                                    <small>
-                                        <?php echo get_the_title(); ?>
-                                    </small>
-                                    <h5 class="card-title">
-                                        <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                            Stand #<?php echo get_field( 'stand_number' ); ?>
-                                        </a> -
-                                        <small>
-                                            <?php echo get_field( 'stand_location' ); ?>
-                                        </small>
-                                    </h5>
-                                </div>
-                            </div>
+                        <div class="card-body">
+                            <small>
+                                <?php echo get_the_title(); ?>
+                            </small>
+                            <h5 class="card-title">
+                                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                    Stand #<?php echo get_field( 'stand_number' ); ?>
+                                </a> -
+                                <small>
+                                    <?php echo get_field( 'stand_location' ); ?>
+                                </small>
+                            </h5>
                         </div>
-                    <?php endwhile; wp_reset_postdata(); ?>
+                    </div>
                 </div>
+                <?php endwhile; ?>
+            </div>
+
+            <nav>
+                <ul class="pagination">
+                    <?php
+                    echo paginate_links( array(
+                        'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                        'total'        => $stand_query->max_num_pages,
+                        'current'      => max( 1, get_query_var( 'paged' ) ),
+                        'format'       => '?paged=%#%',
+                        'show_all'     => false,
+                        'type'         => 'plain',
+                        'end_size'     => 2,
+                        'mid_size'     => 1,
+                        'prev_next'    => true,
+                        'prev_text'    => sprintf( '<i></i> %1$s', __( 'Previous', 'text-domain' ) ),
+                        'next_text'    => sprintf( '%1$s <i></i>', __( 'Next', 'text-domain' ) ),
+                        'add_args'     => false,
+                        'add_fragment' => '',
+                    ) );
+                    ?>
+                </ul>
+            </nav>
+            <?php wp_reset_postdata(); ?>
         </div>
     </div>
 </div>
