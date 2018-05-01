@@ -18,6 +18,9 @@
                 $stand_query = new WP_Query( $args );
             ?>
 
+            <!-- Putting a pin in this for (maybe) later as it's taking me way too long to figure out -->
+
+            <!--
             <form class="form-inline form-site">
                 <div class="form-group">
                     <input id="all" name="radio" class="form-control" type="radio" value="all" checked />
@@ -30,10 +33,11 @@
                     <label for="offsite">Offsite</label>
                 </div>
             </form>
+            -->
 
             <div class="row">
 
-                <?php while($stand_query->have_posts()) : $stand_query->the_post(); ?>
+                <?php while( $stand_query->have_posts() ) : $stand_query->the_post(); ?>
 
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                             <div class="card">
