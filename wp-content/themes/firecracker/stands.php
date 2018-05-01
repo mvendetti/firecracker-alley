@@ -61,8 +61,11 @@
                                     </small>
                                     <h5 class="card-title">
                                         <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                            Stand # <?php echo get_field( 'stand_number', $stand_query->ID ); ?>
-                                        </a>
+                                            Stand #<?php echo get_field( 'stand_number' ); ?>
+                                        </a> -
+                                        <small>
+                                            <?php echo get_field( 'stand_location' ); ?>
+                                        </small>
                                     </h5>
                                 </div>
                             </div>
