@@ -16,6 +16,13 @@ function my_home_category( $query ) {
 }
 add_action( 'pre_get_posts', 'my_home_category' );
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+// Registering new menu for some reason? I don't know. whatever.
+register_nav_menus( array(
+	'primary' => __( 'The Main Menu', 'bonestheme' ),
+) );
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
