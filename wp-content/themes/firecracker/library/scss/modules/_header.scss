@@ -1,22 +1,28 @@
 img {
     &.logo {
-        height: 175px;
-        margin-top: 2em;
+        display: none;
     }
 }
 
 nav {
-    .nav-toggle-thing {
-        .nav {
-            li {
-                &.menu-item {
-                    a {
-                        color: $off-white;
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        &:hover {
-                            text-decoration: none;
-                            color: $light-blue;
+    .text-logo {
+        font-size: 2em;
+        font-weight: bold;
+    }
+    &.navbar {
+        padding: 1em 0 1em 0;
+        #nav-toggle-thing {
+            .nav {
+                li {
+                    &.menu-item {
+                        a {
+                            color: $off-white;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            &:hover {
+                                text-decoration: none;
+                                color: $light-blue;
+                            }
                         }
                     }
                 }

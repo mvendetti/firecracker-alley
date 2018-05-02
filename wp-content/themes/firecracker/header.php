@@ -49,6 +49,7 @@
                         <a href="<?php echo home_url(); ?>" rel="nofollow"><img class="logo" src="/wp-content/themes/firecracker/library/images/logo.png" /></a>
 
                         <nav class="navbar navbar-expand-md" role="navigation">
+                            <a href="<?php echo home_url(); ?>" class="text-logo">Firecracker Alley</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-toggle-thing" aria-controls="nav-toggle-thing" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon">
                                     <img src="/wp-content/themes/firecracker/library/images/menu-icon.svg">

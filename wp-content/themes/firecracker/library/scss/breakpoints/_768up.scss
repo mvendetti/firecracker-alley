@@ -33,7 +33,17 @@ HEADER STYLES
 
 .header {}
 
-#logo {}
+img {
+    &.logo {
+        display: block;
+        height: 175px;
+        margin-top: 2em;
+    }
+}
+
+.text-logo {
+    display: none;
+}
 
 /*********************
 NAVIGATION STYLES
