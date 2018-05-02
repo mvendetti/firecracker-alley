@@ -22,12 +22,25 @@
 
                   <p class="byline entry-meta vcard">
 
-                    <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                       /* the time the post was published */
-                       '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       /* empty argument for now because I suck at PHP */
-                       ''
-                    ); ?>
+                    <?php
+                        $uriSegments = explode( '/', parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) );
+                        $segment_1 = $uriSegments[1];
+
+                        if ( $segment_1 === 'news' ) {
+                            printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
+                               /* the time the post was published */
+                               '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+                               /* empty argument for now because I suck at PHP */
+                               ''
+                           );
+                       }
+
+                       if ( $segment_1 === 'stand' ) {
+                           printf( __( '<span class="stand-number">Stand #', 'bonestheme' ).' %1$s %2$s',
+                                get_field( 'stand_number' ) . '</span>' . ' – ' . '<span class="stand-location">' . get_field( 'stand_location' ) . '<span>', ''
+                           );
+                       }
+                    ?>
 
                   </p>
 
@@ -56,7 +69,18 @@
                       'link_before' => '<span>',
                       'link_after'  => '</span>',
                     ) );
+
+                    $link = get_field( 'link' );
+
+                    if ( $segment_1 === 'stand' ) {
+                        // printf( __( '<strong>Our site:</strong>', 'bonestheme' ).' %1$s %2$s',
+                        //       . '<br /><br />', ''
+                        // );
+
+                        echo '<strong>Our website:</strong> <a target="_blank" href="' . get_field( 'link' ) . '">' . get_field( 'link' ) . '</a>' . '<br /><br />';
+                    }
                   ?>
+
                 </section> <?php // end article section ?>
 
                 <?php //comments_template(); ?>

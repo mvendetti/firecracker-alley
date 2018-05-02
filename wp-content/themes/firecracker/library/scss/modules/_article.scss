@@ -1,0 +1,11 @@
+article {
+    span {
+        &.stand-number {
+            color: $light-red;
+        }
+        &.stand-location {
+            text-transform: capitalize;
+            color: $dark-blue
+        }
+    }
+}

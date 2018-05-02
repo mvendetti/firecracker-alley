@@ -1511,6 +1511,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+/* line 3, ../scss/modules/_article.scss */
+article span.stand-number {
+  color: #DE5454;
+}
+/* line 6, ../scss/modules/_article.scss */
+article span.stand-location {
+  text-transform: capitalize;
+  color: #22304D;
+}
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
