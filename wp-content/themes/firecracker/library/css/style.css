@@ -1520,6 +1520,10 @@ article span.stand-location {
   text-transform: capitalize;
   color: #22304D;
 }
+/* line 12, ../scss/modules/_article.scss */
+article section p {
+  text-align: justify;
+}
 
 /*********************
 BASE (MOBILE) SIZE
