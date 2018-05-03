@@ -73,10 +73,6 @@
                     $link = get_field( 'link' );
 
                     if ( $segment_1 === 'stand' ) {
-                        // printf( __( '<strong>Our site:</strong>', 'bonestheme' ).' %1$s %2$s',
-                        //       . '<br /><br />', ''
-                        // );
-
                         echo '<strong>Our website:</strong> <a target="_blank" href="' . get_field( 'link' ) . '">' . get_field( 'link' ) . '</a>' . '<br /><br />';
                     }
                   ?>
