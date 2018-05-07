@@ -1525,6 +1525,11 @@ article section p {
   text-align: justify;
 }
 
+/* line 1, ../scss/modules/_footer.scss */
+footer {
+  margin-top: 2.5em;
+}
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
