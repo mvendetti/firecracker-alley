@@ -73,7 +73,7 @@
                     $link = get_field( 'link' );
 
                     if ( $segment_1 === 'stand' ) {
-                        echo '<strong>Our website:</strong> <a target="_blank" href="' . get_field( 'link' ) . '">' . get_field( 'link' ) . '</a>' . '<br /><br />';
+                        echo '<strong>Our website:</strong> <a target="_blank" href="' . $link . '">' . $link . '</a>' . '<br /><br />';
                     }
                   ?>
 
