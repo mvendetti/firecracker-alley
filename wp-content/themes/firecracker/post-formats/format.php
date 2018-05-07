@@ -25,6 +25,8 @@
                     <?php
                         $uriSegments = explode( '/', parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ) );
                         $segment_1 = $uriSegments[1];
+                        $link = get_field( 'link' );
+                        $address = get_field( 'stand_address' );
 
                         if ( $segment_1 === 'news' ) {
                             printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
@@ -58,10 +60,20 @@
                       'link_after'  => '</span>',
                     ) );
 
-                    $link = get_field( 'link' );
-
                     if ( $link && $segment_1 === 'stand' ) {
                         echo '<strong>Our website:</strong> <a target="_blank" href="' . $link . '">' . $link . '</a>' . '<br /><br />';
+                    }
+
+                    if ( $address ) {
+                        echo "<h2>Directions</h2>
+
+                            <iframe
+                                 width='100%'
+                                 height='300'
+                                 frameborder='0' style='border: 0;'
+                                 src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBsufXa9CyTo4dXAaimIQXoPsRRFoTWrLQ
+                                 &q=$address' allowfullscreen>
+                             </iframe>";
                     }
                   ?>
 
