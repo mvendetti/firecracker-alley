@@ -72,7 +72,7 @@
 
                     $link = get_field( 'link' );
 
-                    if ( $segment_1 === 'stand' ) {
+                    if ( $link && $segment_1 === 'stand' ) {
                         echo '<strong>Our website:</strong> <a target="_blank" href="' . $link . '">' . $link . '</a>' . '<br /><br />';
                     }
                   ?>
