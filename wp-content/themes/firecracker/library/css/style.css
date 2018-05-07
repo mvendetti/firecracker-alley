@@ -1497,6 +1497,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #22304D;
 }
 
+/* line 5, ../scss/modules/_main.scss */
+main {
+  margin-bottom: 1em;
+}
+
 /* line 1, ../scss/modules/_cards.scss */
 .card {
   margin-bottom: 2em;
