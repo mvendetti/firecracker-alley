@@ -6,3 +6,4 @@ wp-content/uploads/
 /.htaccess
 /license.txt
 /readme.html
+*.zip
