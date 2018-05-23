@@ -1,0 +1,13 @@
+.sidebar {
+    .widget {
+        h4 {
+            &.widgettitle {
+                text-align: center;
+                font-size: 1.5em;
+                border-bottom: 2px solid $dark-blue;
+                padding-bottom: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
